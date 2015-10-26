@@ -19,12 +19,12 @@ end entity lut_tb;
 architecture arc of lut_tb is
     component lut is
         port(
-            addr : in std_logic_vector(LUT_ADDR_SIZE-1 downto 0);
+            addr : in std_logic_vector(ADDR_SIZE-1 downto 0);
             inst : out std_logic_vector(RT_INST_SIZE-1 downto 0) 
         );
     end component;
     
-    signal address : std_logic_vector(LUT_ADDR_SIZE-1 downto 0) := (others => '0');
+    signal address : std_logic_vector(ADDR_SIZE-1 downto 0) := (others => '0');
     signal instruction : std_logic_vector(RT_INST_SIZE-1 downto 0) := (others => '0');
 begin
     lut0 : lut port map(addr => address, inst => instruction);
